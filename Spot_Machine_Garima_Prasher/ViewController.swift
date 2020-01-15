@@ -10,10 +10,21 @@ import UIKit
 
 class ViewController: UIViewController{
     
-    private let donuts = ["pink donut", "choco donut", "vanilla dip donut", ""]
+    private let donuts = ["pink donut", "choco donut", "vanilla dip donut", "coconut donut", "stripes donut", "empty donut"]
 
     @IBOutlet weak var pickerview: UIPickerView!
     
+    @IBAction func SPIN(_ sender: UIButton) {
+    }
+    
+    @IBAction func PlusValue(_ sender: UIButton) {
+    }
+    
+    @IBAction func MinusValue(_ sender: UIButton) {
+    }
+    
+    
+    @IBOutlet weak var textfield: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerview.delegate = self
@@ -27,6 +38,10 @@ class ViewController: UIViewController{
     }
         func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
             return donuts.count
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            textfield.text = donuts[row]
         }
         
         func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
